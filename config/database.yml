@@ -1,0 +1,7 @@
+development: 
+  adapter: postgresql
+  database: development
+  username: 'pesho'
+  password: '1234'
+  host: localhost
+  pool: 30
