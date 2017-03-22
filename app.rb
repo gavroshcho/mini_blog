@@ -34,7 +34,6 @@ end
 get '/posts/:id' do
   @post = Post.find(params[:id])
   @comments = @post.comments
-  p @comments
   erb :post
 end
 
@@ -46,7 +45,6 @@ end
 
 post '/posts/:id/comments' do
   @post = Post.find(params[:id])
-  p params
   @comment = @post.comments.create(params[:comment])
   if @comment.save
     redirect "/posts"
