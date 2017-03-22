@@ -3,20 +3,24 @@
   <% @posts.each do |post| %>
     <h1><%= post.name %></h1>
     <p><%= post.description %></p>
+    
     <form action="/posts/<%=post.id%>/comments" method="post">
       <input type="text" name="comment[body]" />
       <input type="submit" value="Create comment">
     </form>
+
     <% post.comments.each do |comment| %>
       <%= comment.body %>
     <% end %>
 
     <form action="/posts/<%=post.id%>" method="post">
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete Article?">
+      <input type="submit" value="Delete Post?">
     </form>
+
   <% end %>
 </ul>
+
 <a href="/">Back to Home</a>
 
 
